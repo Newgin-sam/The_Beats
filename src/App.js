@@ -1,4 +1,5 @@
 import "./resources/styles.css";
+import {Element} from 'react-scroll';
 
 import Header from "./components/header_footer/Header";
 import Featured from "./components/featured/index";
@@ -10,18 +11,29 @@ import Footer from './components/header_footer/Footer';
 
 const App = () => {
   return (
-    <div className="App"
-      style={{
-        backgroundColor:"turquoise",
-        height:'1500px'
-      }}
-    >
+    <div className="App"> 
       <Header />
-      <Featured />
-      <VenueInfo />
-      <Highlights/>
-      <Pricing/>
-      <Location/>
+
+      <Element name="featured">
+        <Featured />
+      </Element>
+  
+      <Element name="venueinfo">
+        <VenueInfo />
+      </Element>
+    
+      <Element name="highlight">
+        <Highlights/>
+      </Element>
+    
+      <Element name="pricing">
+        <Pricing/>
+      </Element>
+    
+      <Element name="location">
+        <Location/>
+      </Element>
+  
       <Footer/>
     </div>
   );

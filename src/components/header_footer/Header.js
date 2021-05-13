@@ -41,7 +41,7 @@ class Header extends Component {
             >
            <Toolbar>
                 <div class="header_logo">
-                    <div className="font_righteous header_logo_venue">The venue</div>
+                    <div className="font_righteous header_logo_venue">The Beats</div>
                     <div className="header_logo_title">Musical Events</div>
                 </div>
 

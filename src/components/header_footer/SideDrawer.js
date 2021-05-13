@@ -1,22 +1,32 @@
 import React from 'react';
-
+import { scroller } from 'react-scroll';
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem  from "@material-ui/core/ListItem";
 
-function SideDrawer(props) {
+const SideDrawer = (props) => {
+
+    const scrollToElement = (element) => {
+        scroller.scrollTo(element,{
+            duration:1500,
+            delay:100,
+            offset:-150,
+            smooth:true
+        })
+        props.onClose(false);
+    }
 
     const links = [
         { where:'featured',value:'To top'},
-        { where:'venuenfo',value:'Venue NFO'},
-        { where:'highlights',value:'Highlights'},
+        { where:'venueinfo',value:'Venue NFO'},
+        { where:'highlight',value:'Highlights'},
         { where:'pricing',value:'Pricing'},
         { where:'location',value:'Location'}
     ]
 
     const renderItem = (item) => {
         return (
-            <ListItem button onClick={() => {alert(item.where)}}  key={item.where}>
+            <ListItem button onClick={() => (scrollToElement(item.where))}  key={item.where}>
                 {item.value}
             </ListItem>
         )
